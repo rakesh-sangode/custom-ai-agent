@@ -1,22 +1,15 @@
-from functions.get_files_info import get_files_info
-from functions.get_file_content import get_file_content
+# from functions.get_files_info import get_files_info
+# from functions.get_file_content import get_file_content
+# from functions.write_file import write_file
+from functions.run_python_file import run_python_file
 
 
 def main():
     working_directory = "calculator"
-    # root_contents = get_files_info(working_directory)
-    # print(root_contents)
-    # pkg_contents = get_files_info(working_directory, "pkg")
-    # print(pkg_contents)
-    # pkg_contents = get_files_info(working_directory, "/bin")
-    # print(pkg_contents)
-    # pkg_contents = get_files_info(working_directory, "../")
-    # print(pkg_contents)
-    print(get_file_content(working_directory, "lorem.txt"))
-    print(get_file_content(working_directory, "main.py"))
-    print(get_file_content(working_directory, "pkg/calculator.py"))
-    print(get_file_content(working_directory, "pkg/notafile.py"))
-    print(get_file_content(working_directory, "/bin/cat"))
+    print(run_python_file(working_directory, "main.py", ["3 + 5"]))
+    print(run_python_file(working_directory, "tests.py"))
+    print(run_python_file(working_directory, "../main.py"))
+    print(run_python_file(working_directory, "nonexistent.py"))
 
 
 main()
